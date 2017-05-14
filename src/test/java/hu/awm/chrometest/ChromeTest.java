@@ -11,7 +11,9 @@ public class ChromeTest {
 	@Test
 	public void testName() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox");
+		WebDriver browser = new ChromeDriver(options);
 		driver.get("http://www.google.com/");
 		WebElement body = driver.findElement(By.cssSelector("body"));
 		System.out.println(body.getText());
