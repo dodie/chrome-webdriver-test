@@ -20,6 +20,8 @@ public class ChromeTest {
                               envName,
                               env.get(envName));
         }
+
+    System.out.println("is slave? " + (System.getenv("NODE_NAME") !== null && System.getenv("NODE_NAME").contains("docker"));
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--no-sandbox");
 		WebDriver driver = new ChromeDriver(options);
