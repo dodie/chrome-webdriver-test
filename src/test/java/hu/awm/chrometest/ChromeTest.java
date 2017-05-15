@@ -7,11 +7,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.Map;
+
 public class ChromeTest {
 
 	@Test
 	public void testName() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
+    Map<String, String> env = System.getenv();
+        for (String envName : env.keySet()) {
+            System.out.format("%s=%s%n",
+                              envName,
+                              env.get(envName));
+        }
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--no-sandbox");
 		WebDriver driver = new ChromeDriver(options);
