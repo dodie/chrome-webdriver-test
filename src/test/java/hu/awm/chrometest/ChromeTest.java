@@ -31,9 +31,10 @@ public class ChromeTest {
         "is slave? " + isSlave
     );
 
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		WebDriver driver = new ChromeDriver(options);
+		//ChromeOptions options = new ChromeOptions();
+		//options.addArguments("--no-sandbox");
+    //WebDriver driver = new ChromeDriver(options);
+    WebDriver driver = new ChromeDriver();
 		driver.get("http://www.google.com/");
 		WebElement body = driver.findElement(By.cssSelector("body"));
 		System.out.println(body.getText());
